@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+  <link href="/static/images/favicon/favicon.ico" rel="icon">
+  <title>MediCarePlus - Medical Healthcare HTML5 Template</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="/static/css/libraries.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <style>
+    .bottomwidth260{
+      width: 260px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+      <!-- /.header-top -->
+      <nav class="navbar navbar-expand-lg sticky-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+            <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button">
+            <span class="menu-lines"><span></span></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav__item">
+                <a href="/" class="nav__item-link">Home</a>
+              </li><!-- /.nav-item -->
+              <li class="nav__item">
+                <a href="/blog" class="nav__item-link">Blog</a>
+              </li><!-- /.nav-item -->
+              <li class="nav__item">
+                <a href="/contactus" class="nav__item-link">Contacts</a>
+              </li><!-- /.nav-item -->
+              <li class="nav__item">
+                <a href="/aboutus" class="nav__item-link">About Us</a>
+              </li><!-- /.nav-item -->
+            </ul><!-- /.navbar-nav -->
+            <a href="/login" class="btn btn__primary btn__rounded ml-30">
+              <i class="icon-user"></i>
+              <span>Staff login</span>
+            </a>
+          <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
+        </div><!-- /.navbar-collapse -->
+
+          
+        </div><!-- /.container -->
+      </nav><!-- /.navabr -->
+    </header><!-- /.Header -->
+
+
+
+    <!-- ==========================
+        contact layout 1
+    =========================== -->
+    <section class="contact-layout1 pt-0 mt--100" style="margin-top: 50px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="contact-panel d-flex flex-wrap">
+              <form class="contact-panel__form" method="post" action="###" id="contactForm">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4 class="contact-panel__title">How Can We Help? </h4>
+                    <p class="contact-panel__desc mb-30">Please feel welcome to contact our friendly reception staff
+                      with any general or medical enquiry. Our doctors will receive or return any urgent calls.
+                    </p>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <i class="icon-user form-group-icon"></i>
+                      <input type="text" class="form-control bottomwidth260" placeholder="Name" id="contact-name" name="contact_name"
+                        required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <i class="icon-email form-group-icon"></i>
+                      <input type="email" class="form-control bottomwidth260" placeholder="Email" id="contact-email"
+                        name="contact_email" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <i class="icon-phone form-group-icon"></i>
+                      <input type="text" class="form-control bottomwidth260" placeholder="Phone" id="contact-Phone"
+                        name="contact_phone" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <i class="icon-news form-group-icon"></i>
+                      <select class="form-control bottomwidth260" name="contact_subject">
+                        <option value="0">Subject</option>
+                        <option value="1">Subject 1</option>
+                        <option value="2">Subject 1</option>
+                      </select>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-12">
+                    <div class="form-group">
+                      <i class="icon-alert form-group-icon"></i>
+                      <textarea class="form-control " placeholder="Message" id="contact-message"
+                        name="contact_message" style="width: 565px !important;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
+                      <span>Submit Request</span> <i class="icon-arrow-right"></i>
+                    </button>
+                    <div class="contact-result"></div>
+                  </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+              </form>
+              <div
+                class="contact-panel__info d-flex flex-column justify-content-between bg-overlay bg-overlay-primary-gradient">
+                <div class="bg-img"><img src="/static/images/banners/1.jpg" alt="banner"></div>
+                <div>
+                  <h4 class="contact-panel__title color-white">Quick Contacts</h4>
+                  <p class="contact-panel__desc font-weight-bold color-white mb-30">Please feel free to contact our
+                    friendly staff with any medical enquiry.
+                  </p>
+                </div>
+                <div>
+                  <ul class="contact__list list-unstyled mb-30">
+                    <li>
+                      <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002) 01061245741</a>
+                    </li>
+                    <li>
+                      <i class="icon-location"></i><a href="#">Location: Brooklyn, New York</a>
+                    </li>
+                    <li>
+                      <i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn__white btn__rounded btn__outlined">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.contact layout 1 -->
+
+    <!-- ========================= 
+      Testimonials layout 2
+      =========================  -->
+    <section class="testimonials-layout2 pt-40 pb-40">
+      <div class="container">
+        <div class="testimonials-wrapper">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-5">
+              <div class="heading-layout2">
+                <h3 class="heading__title">Inspiring Stories!</h3>
+              </div><!-- /.heading -->
+            </div><!-- /.col-lg-5 -->
+            <div class="col-sm-12 col-md-12 col-lg-7">
+              <div class="slider-with-navs">
+                <!-- Testimonial #1 -->
+                <div class="testimonial-item">
+                  <h3 class="testimonial__title">“Their doctors include highly qualified practitioners who come from a
+                    range of backgrounds and bring with them a diversity of skills and special interests. They also have
+                    registered nurses on staff who are available to triage any urgent matters, and the administration
+                    and support staff all have exceptional people skills”
+                  </h3>
+                </div><!-- /. testimonial-item -->
+                <!-- Testimonial #2 -->
+                <div class="testimonial-item">
+                  <h3 class="testimonial__title">“Their doctors include highly qualified practitioners who come from a
+                    range of backgrounds and bring with them a diversity of skills and special interests. They also have
+                    registered nurses on staff who are available to triage any urgent matters, and the administration
+                    and support staff all have exceptional people skills”
+                  </h3>
+                </div><!-- /. testimonial-item -->
+                <!-- Testimonial #3 -->
+                <div class="testimonial-item">
+                  <h3 class="testimonial__title">“Their doctors include highly qualified practitioners who come from a
+                    range of backgrounds and bring with them a diversity of skills and special interests. They also have
+                    registered nurses on staff who are available to triage any urgent matters, and the administration
+                    and support staff all have exceptional people skills”
+                  </h3>
+                </div><!-- /. testimonial-item -->
+              </div><!-- /.slick-carousel -->
+              <div class="slider-nav mb-60">
+                <div class="testimonial__meta">
+                  <div class="testimonial__thmb">
+                    <img src="/static/images/testimonials/thumbs/1.png" alt="author thumb">
+                  </div><!-- /.testimonial-thumb -->
+                  <div>
+                    <h4 class="testimonial__meta-title">Sami Wade</h4>
+                    <p class="testimonial__meta-desc">Web INC</p>
+                  </div>
+                </div><!-- /.testimonial-meta -->
+                <div class="testimonial__meta">
+                  <div class="testimonial__thmb">
+                    <img src="/static/images/testimonials/thumbs/2.png" alt="author thumb">
+                  </div><!-- /.testimonial-thumb -->
+                  <div>
+                    <h4 class="testimonial__meta-title">Ahmed</h4>
+                    <p class="testimonial__meta-desc">Web Inc</p>
+                  </div>
+                </div><!-- /.testimonial-meta -->
+                <div class="testimonial__meta">
+                  <div class="testimonial__thmb">
+                    <img src="/static/images/testimonials/thumbs/3.png" alt="author thumb">
+                  </div><!-- /.testimonial-thumb -->
+                  <div>
+                    <h4 class="testimonial__meta-title">Sonia Blake</h4>
+                    <p class="testimonial__meta-desc">Web Inc</p>
+                  </div>
+                </div><!-- /.testimonial-meta -->
+              </div><!-- /.slider-nav -->
+            </div><!-- /.col-lg-7 -->
+          </div><!-- /.row -->
+        </div><!-- /.testimonials-wrapper -->
+      </div><!-- /.container -->
+    </section><!-- /.testimonials layout 2 -->
+
+
+    <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer" lang="en">
+        <div class="footer-primary">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="footer-widget-about">
+                  <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                  <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                    compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                    choice for your family healthcare.
+                  </p>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-xl-2 -->
+  
+              <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="footer-widget-nav">
+                  <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                  <nav>
+                    <ul style="color:#20044f !important" class="list-unstyled">
+                      <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                      <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                      <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+              <div class="col-sm-12 col-md-5 col-lg-6">
+                <div class="footer-widget-contact">
+                  <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li>If you have any questions or need help, feel free to contact with our team.</li>
+                    <li>
+                      <a href="tel:01061245741" class="phone__number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.footer-primary -->
+      </footer><!-- /.Footer -->
+    <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+  </div><!-- /.wrapper -->
+
+  <script src="/static/js/jquery-3.5.1.min.js"></script>
+  <script src="/static/js/plugins.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+        <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+        <link href="/static/images/favicon/favicon.ico" rel="icon">
+        <title>MediCarePlus - Medical Healthcare</title>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+        <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="/static/css/libraries.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/checkin.css"> 
+
+        <style>
+          body {
+            font-family: Arial, sans-serif !important;
+            background: linear-gradient(45deg,#b258fd, #8c3c8c,#fc75c5 , #593b7b , #38088a) !important;
+            background-size: cover !important;
+            -webkit-background-size: cover !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+      
+        form {
+            max-width: 600px !important;
+            margin: 50px auto !important;
+            padding: 20px !important;
+            background-color: #fff !important;
+            border-radius: 8px !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+            clear: both !important;
+      
+        }
+      
+        label {
+            font-weight: bold !important;
+        }
+      
+        select, input, button {
+            margin-bottom: 10px !important;
+            width: 100% !important;
+            padding: 10px !important;
+            border: 1px solid #ccc !important;
+            border-radius: 5px !important;
+            box-sizing: border-box !important;
+        }
+      
+        button {
+            background-color: #b059fa !important;
+            color: #fff !important;
+            cursor: pointer !important;
+            transition: all 0.3s linear !important;
+            border-radius: 50px !important; 
+        }
+      
+        button:hover {
+            background-color: #20044f !important;
+            color:#fff !important;
+            transition: all 0.3s linear !important;
+        }
+      
+        #inputFields {
+            margin-top: 20px !important;
+        }
+        </style>
+      </head>
+<body>
+        <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+
+      <nav class="navbar navbar-expand-lg sticky-navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+              <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+              <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button">
+              <span class="menu-lines"><span></span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+              <ul class="navbar-nav ml-auto">
+                <li style="color: #20054e;font-size: 27pt;">Hello, Admin Mohammed!</li>
+
+                <!--{#<li style="margin-top: 8px;">  
+                  <a href="/" class="btn_login" style="color: #fff !important;"><i class="icon-user"></i><span style="margin-left: 10px;">Logout</span></a>
+                </li> 
+                <li class="nav__item">
+                  <a href="/staff_main" class="nav__item-link">User home</a>
+                </li>!-- /.nav-item -->
+              </ul>
+              <a href="/logout" class="btn_login" style="color: #fff !important;margin-right: -35px;"><span style="margin-left: 10px;">Logout</span></a>
+              <a href="/staff_main" class="btn_login" style="color: #fff !important;"><span style="margin-left: 10px; width:80px;">User home</span></a>
+            </div>
+          </div>
+        </nav><!-- /.navabr -->
+      </header><!-- /.Header -->
+<nav class="navbar navbar-expand-lg sticky-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+        <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="menu-lines"><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ml-auto">
+            {% if (employee_info[0]["role"] == "Admin") and (employee_info[0]["status"] == "Working") %}
+                <li style="color: #20054e;font-size: 27pt;">Hello, {{employee_info[0]["role"]}} {{employee_info[0]["first_name"]}}!</li>
+            {% elif (employee_info[0]["role"] == 'Receptionist') and (employee_info[0]["status"] == "Working") %}
+                <li style="color: #20054e;font-size: 27pt;">Hello, Hospital Receptionist {{employee_info[0]["first_name"]}}!</li>
+            {% endif %}
+            
+          {#<li style="margin-top: 8px;">  
+            <a href="/" class="btn_login" style="color: #fff !important;"><i class="icon-user"></i><span style="margin-left: 10px;">Logout</span></a>
+          </li> 
+          <li class="nav__item">
+            <a href="/staff_main" class="nav__item-link">User home</a>
+          </li><!-- /.nav-item -->#}
+        </ul>
+        <a href="/logout" class="btn_login" style="color: #fff !important;margin-right: -35px;"><span style="margin-left: 10px;">Logout</span></a>
+        <a href="/staff_main" class="btn_login" style="color: #fff !important;"><span style="margin-left: 10px; width:80px;">User home</span></a>
+      </div>
+    </div>
+  </nav><!-- /.navabr -->
+
+
+    {% if (employee_info[0]["role"] == "Admin") or (employee_info[0]["role"] == "Receptionist")  and (employee_info[0]["status"] == "Working") %}
+
+<!--  table tablestriped-->
+        <br><br><br><br>
+        <table class=" ">
+            <thead class="thead-dark">{# id="theadmain" #}
+                <tr>
+                    <th class="text-start head">Contact name</th>
+                    <th class="text-start head">Contact email</th>
+                    <th class="text-end head">Contact phone</th>
+                    <th class="text-start head">Contact subject</th>
+                    <th class="text-end head">Contact message</th>
+                </tr>
+            </thead>
+            <tbody>
+        <!-- Loop through the database entries to display them in this table -->
+              {% for contact_messages in contact_messages %}
+                  <tr>
+                      <td class="text-start data">{{ contact_messages["name"] }}</td>
+                      <td class="text-end data">{{ contact_messages["email"] }}</td>
+                      <td class="text-start data">{{ contact_messages["phone"] }}</td>
+                      <td class="text-start data">{{ contact_messages["subject"] }}</td>
+                      <td class="text-end data">{{ contact_messages["message"] }}</td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+        </table><br><br><br><br> 
+
+
+
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-octagon-fill"></i>
+            Invalid role or suspicious action!
+        </div>
+    {% endif %}
+
+          <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer" lang="en">
+      <div class="footer-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-3">
+              <div class="footer-widget-about">
+                <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                  compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                  choice for your family healthcare.
+                </p>
+
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-xl-2 -->
+
+            <div class="col-sm-6 col-md-6 col-lg-2">
+              <div class="footer-widget-nav">
+                <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                <nav>
+                  <ul style="color:#20044f !important" class="list-unstyled">
+                    <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                    <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                    <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-sm-12 col-md-5 col-lg-6">
+              <div class="footer-widget-contact">
+                <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                <ul class="contact-list list-unstyled">
+                  <li>If you have any questions or need help, feel free to contact with our team.</li>
+                  <li>
+                    <a href="tel:01061245741" class="phone__number">
+                      <i class="icon-phone"></i> <span>01061245741</span>
+                    </a>
+                  </li>
+                  <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                </ul>
+
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-lg-2 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </div><!-- /.footer-primary -->
+    </footer><!-- /.Footer -->
+    <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+</body>
+</html>

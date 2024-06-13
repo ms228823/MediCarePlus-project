@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+        <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+        <link href="/static/images/favicon/favicon.ico" rel="icon">
+        <title>MediCarePlus - Medical Healthcare</title>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+        <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="/static/css/libraries.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/printreport.css">
+      </head>
+<body>
+        <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+
+      <nav class="navbar navbar-expand-lg sticky-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+            <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button">
+            <span class="menu-lines"><span></span></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ml-auto">
+              <li style="color: #20054e;font-size: 27pt;">Hello, Admin Mohammed!</li>
+  
+              <!--<li style="color: #20054e;font-size: 27pt;">Hello, Hospital Receptionist Jane!</li>-->
+                
+            </ul>
+            <a href="index.html" class="btn_login" style="color: #fff !important;margin-right: -35px;"><span style="margin-left: 10px;">Logout</span></a>
+            <a href="staff-main.html" class="btn_login" style="color: #fff !important;"><span style="margin-left: 10px; width:80px;">User home</span></a>
+          </div>
+        </div>
+      </nav><!-- /.navabr -->    
+      </header><!-- /.Header -->
+
+      <!-- Page Content #############-->
+      {% if (employee_info[0]["role"] == "Admin") or (employee_info[0]["role"] == "Receptionist") and (employee_info[0]["status"] == "Working") %}
+
+
+      <br><br><br><br>
+
+      <div>
+          <div>
+              <div>
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Employee's First Name</th>
+                              <th>Employee's Middle Name</th>
+                              <th>Employee's Last Name</th>
+                              <th>Employee's Role</th>
+                              <th>Employee's Status</th>
+                              <th>Employee's No.of reservations</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {% for action in actions_of_employees %}
+                              {% if action["role"] == "Receptionist" %}
+                              <tr>
+                                  <td class="text-start data">{{ action["first_name"] }}</td>
+                                  <td class="text-start data">None</td>
+                                  <td class="text-end data">{{ action["last_name"] }}</td>
+                                  <td class="text-end data">Hospital {{ action["role"] }}</td>
+                                  <td class="text-end data">{{ action["status"] }}</td>
+                                  <td class="text-end data">{{ action["number_of_reservations"] }}</td>
+                              </tr>
+                              {% elif action["middle_name"] == "" %}
+                                  <tr>
+                                      <td class="text-start data">{{ action["first_name"] }}</td>
+                                      <td class="text-start data">None</td>
+                                      <td class="text-end data">{{ action["last_name"] }}</td>
+                                      <td class="text-end data">{{ action["role"] }}</td>
+                                      <td class="text-end data">{{ action["status"] }}</td>
+                                      <td class="text-end data">{{ action["number_of_reservations"] }}</td>
+                                  </tr>
+
+                              {% else %}
+                                  <tr>
+                                      <td class="text-start data">{{ action["first_name"] }}</td>
+                                      <td class="text-start data">{{ action["middle_name"] }}</td>
+                                      <td class="text-end data">{{ action["last_name"] }}</td>
+                                      <td class="text-end data">{{ action["role"] }}</td>
+                                      <td class="text-end data">{{ action["status"] }}</td>
+                                      <td class="text-end data">{{ action["number_of_reservations"] }}</td>
+                                  </tr>
+                              {% endif %}
+                          {% endfor %}
+                      </tbody>
+                  </table><br><br><br><br>
+              </div>
+          </div>
+      </div>
+<!-- print report button -->
+
+  {% else %}
+      <div class="alert alert-danger" role="alert">
+          <i class="bi bi-exclamation-octagon-fill"></i>
+          Invalid role or suspicious action!
+      </div>
+  {% endif %}
+
+          <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer" lang="en">
+        <div class="footer-primary">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="footer-widget-about">
+                  <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                  <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                    compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                    choice for your family healthcare.
+                  </p>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-xl-2 -->
+  
+              <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="footer-widget-nav">
+                  <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                  <nav>
+                    <ul style="color:#20044f !important" class="list-unstyled">
+                      <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                      <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                      <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+              <div class="col-sm-12 col-md-5 col-lg-6">
+                <div class="footer-widget-contact">
+                  <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li>If you have any questions or need help, feel free to contact with our team.</li>
+                    <li>
+                      <a href="tel:01061245741" class="phone__number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.footer-primary -->
+      </footer><!-- /.Footer -->
+      <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+</body>
+</html>

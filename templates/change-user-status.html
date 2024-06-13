@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+        <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+        <link href="/static/images/favicon/favicon.ico" rel="icon">
+        <title>MediCarePlus - Medical Healthcare</title>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+        <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="/static/css/libraries.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <style>
+          .select {
+            width: 450px !important;
+            margin-left: 50px;
+            margin-bottom: 50px;}
+          /*body > .container > .content{
+            background-image: url("/static/images/backgrounds/top-view-doctor-desk-table-with-stethoscope-blank-paper-clipboard-with-pencil-top-view-with-copy-space-flat-lay_14098-7379bf4.jpg");
+          }*/
+          body {
+            background: linear-gradient(45deg,#b258fd, #8c3c8c,#fc75c5 , #593b7b , #38088a);
+            background-size: cover;
+            -webkit-background-size: cover;
+          }
+
+        </style>
+    </head>
+<body>
+        <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+
+<nav class="navbar navbar-expand-lg sticky-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+        <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="menu-lines"><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ml-auto">
+          <li style="color: #20054e;font-size: 27pt;">Hello, Admin Mohammed!</li>
+
+          <!--<li style="color: #20054e;font-size: 27pt;">Hello, Hospital Receptionist Jane!</li>-->
+            
+        </ul>
+        <a href="index.html" class="btn_login" style="color: #fff !important;margin-right: -35px;"><span style="margin-left: 10px;">Logout</span></a>
+        <a href="staff-main.html" class="btn_login" style="color: #fff !important;"><span style="margin-left: 10px; width:80px;">User home</span></a>
+      </div>
+    </div>
+  </nav><!-- /.navabr -->
+      </header><!-- /.Header -->
+
+      <!-- Page Content #############-->
+      <div class="container">
+        <div class="content ">
+            <form action="/changinguserstatus" method="post" style="margin-top: 60px;">
+                <h2 class="white" style="color: #f2f2f2 !important;">changing user's status</h2>
+
+                
+                    <select class="form-control width310 select" name="user" required>
+                        <option selected disabled>Name,role</option>
+                        {% for user in users_data %}
+                        {% if user["middle_name"] %}
+                            <option value="{{user["id"]}}"><p>{{user["first_name"]}}</p><p> {{user["middle_name"]}}</p><p> {{user["last_name"]}}</p>,<p> {{user["role"]}}</p></option>
+                        {% else %}
+                            <option value="{{user["id"]}}"><p>{{user["first_name"]}}</p><p> {{user["last_name"]}}</p>,<p> {{user["role"]}}</p></option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <span class="select-btn">
+                    <i class="bi bi-chevron-down"></i>
+                    </span>
+                   
+
+                
+                    <select class="form-control width310 select" style="width: 300px;" name="status" required>
+                        <option selected disabled>Status</option>
+                        {% for status in status_options %}
+                            <option value="{{status}}"><p>{{status}}</p></option>
+                        {% endfor %}
+                    </select>
+                    <span class="select-btn">
+                    <i class="bi bi-chevron-down"></i>
+                    </span>
+                
+                <div class="form-row-last">
+                    <input type="submit" name="register" class="register btn btn__primary btn__rounded ml-30" value="Change user's status" style ="margin-right: 45px;">
+                </div>
+              
+            </form>
+        </div>
+      </div>
+
+          <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer" lang="en">
+        <div class="footer-primary">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="footer-widget-about">
+                  <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                  <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                    compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                    choice for your family healthcare.
+                  </p>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-xl-2 -->
+  
+              <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="footer-widget-nav">
+                  <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                  <nav>
+                    <ul style="color:#20044f !important" class="list-unstyled">
+                      <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                      <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                      <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+              <div class="col-sm-12 col-md-5 col-lg-6">
+                <div class="footer-widget-contact">
+                  <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li>If you have any questions or need help, feel free to contact with our team.</li>
+                    <li>
+                      <a href="tel:01061245741" class="phone__number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.footer-primary -->
+      </footer><!-- /.Footer -->
+      <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+</body>
+</html>

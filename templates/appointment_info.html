@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+{% block nav_data %}
+      <nav class="navbar navbar-expand-lg sticky-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+            <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button">
+            <span class="menu-lines"><span></span></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavigation">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav__item">
+                  <a href="/" class="nav__item-link">Home</a>
+                </li><!-- /.nav-item -->
+               <li class="nav__item">
+                  <a href="/blog" class="nav__item-link">Blog</a>
+                </li><!-- /.nav-item -->
+                <li class="nav__item">
+                  <a href="/contactus" class="nav__item-link">Contacts</a>
+                </li><!-- /.nav-item -->
+                <li class="nav__item">
+                  <a href="/aboutus" class="nav__item-link">About Us</a>
+                </li><!-- /.nav-item -->
+              </ul><!-- /.navbar-nav -->
+              <a href="/login" class="btn btn__primary btn__rounded ml-30">
+                <i class="icon-user"></i>
+                <span>Staff login</span>
+              </a>
+            <!-- <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button> -->
+          </div><!-- /.navbar-collapse -->
+
+          
+        </div><!-- /.container -->
+      </nav><!-- /.navabr -->
+{% endblock %}
+{% block main_content %}
+
+{% endblock %}

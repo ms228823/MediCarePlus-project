@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+        <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+        <link href="/static/images/favicon/favicon.ico" rel="icon">
+        <title>MediCarePlus - Medical Healthcare</title>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+        <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="/static/css/libraries.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+      </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+        <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="menu-lines"><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav__item">
+            <a href="/" class="nav__item-link">Home</a>
+          </li><!-- /.nav-item -->
+          <li class="nav__item">
+            <a href="/blog" class="nav__item-link">Blog</a>
+          </li><!-- /.nav-item -->
+          <li class="nav__item">
+            <a href="/contactus" class="nav__item-link">Contacts</a>
+          </li><!-- /.nav-item -->
+          <li class="nav__item">
+            <a href="/aboutus" class="nav__item-link">About Us</a>
+          </li><!-- /.nav-item -->
+        </ul><!-- /.navbar-nav -->
+        <a href="/login" class="btn btn__primary btn__rounded ml-30">
+          <i class="icon-user"></i>
+          <span>Staff login</span>
+        </a>
+      <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
+    </div><!-- /.navbar-collapse -->
+
+      
+    </div><!-- /.container -->
+  </nav><!-- /.navabr -->
+
+<div class="container">
+    <h1>Step One of Four</h1>
+    <form method="post">
+        <label for="input_clinic">Clinic:</label>
+        <select name="input_clinic" required>
+            <option selected disabled>Clinic</option>
+            {% for clinic in clinics %}
+                <option value="{{clinic["clinic_id"]}}"><p>{{clinic["name"]}}</p></option>
+            {% endfor %}
+        </select>
+            
+        <a href="doctor.html" type="submit" value="Doctors">Doctors</a>
+        
+    </form>
+</div>
+
+
+    <footer class="footer" lang="en">
+        <div class="footer-primary">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="footer-widget-about">
+                  <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                  <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                    compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                    choice for your family healthcare.
+                  </p>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-xl-2 -->
+  
+              <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="footer-widget-nav">
+                  <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                  <nav>
+                    <ul style="color:#20044f !important" class="list-unstyled">
+                      <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                      <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                      <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+              <div class="col-sm-12 col-md-5 col-lg-6">
+                <div class="footer-widget-contact">
+                  <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li>If you have any questions or need help, feel free to contact with our team.</li>
+                    <li>
+                      <a href="tel:01061245741" class="phone__number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.footer-primary -->
+      </footer><!-- /.Footer -->
+      <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+</body>
+</html>
+
+
+ 

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+        <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+        <link href="/static/images/favicon/favicon.ico" rel="icon">
+        <title>MediCarePlus - Medical Healthcare</title>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+        <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="/static/css/libraries.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/patient_registeration.css">
+
+      </head>
+<body>
+        <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+
+<nav class="navbar navbar-expand-lg sticky-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+        <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="menu-lines"><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ml-auto">
+            <li style="color: #20054e;font-size: 27pt;">Hello, Admin Mohammed!</li>
+  
+            <!--<li style="color: #20054e;font-size: 27pt;">Hello, Hospital Receptionist Jane!</li>-->
+              
+            
+        </ul>
+        <a href="index.html" class="btn_login" style="color: #fff !important;margin-right: -35px;"><span style="margin-left: 10px;">Logout</span></a>
+        <a href="staff-main.html" class="btn_login" style="color: #fff !important;"><span style="margin-left: 10px; width:80px;">User home</span></a>
+      </div>
+    </div>
+  </nav><!-- /.navabr -->
+      </header><!-- /.Header -->
+
+      <!-- Page Content #############-->
+      <div class="page-content">
+        <div class="form-v10-content">
+            <form class="form-detail" action="/patientregisteration" method="post" id="myform">
+                <div class="form-left">
+                    <h2>General Infomation</h2>
+                    <div class="form-row">
+                        <select name="title">
+                            <option class="option" disabled selected>Title</option>
+                            {% for title in titles %}
+                                <option value="{{title}}">{{title}}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="select-btn">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required>
+                        </div>
+                        <div class="form-row form-row-2">
+                            <input type="text" name="middle_name" id="last_name" class="input-text" placeholder="Middle Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <select name="gender">
+                            <option selected disabled>gender</option>
+                            {% for gender in genders %}
+                                <option value="{{gender}}">{{gender}}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="select-btn">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="form-row">
+                        <p>Birth date</p>
+                        <input type="date" name="birth_date" id="birth_date">
+                    </div>
+
+                <!-- <div class="form-row">
+
+               </div>
+               <div class="form-row">
+
+               </div> -->
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <select name="country">
+                                <option selected disabled>country</option>
+                                {% for country in countries %}
+                                    <option value="{{country}}">{{country}}</option>
+                                {% endfor %}
+                            </select>
+                            <span class="select-btn">
+                                <i class="bi bi-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="form-row form-row-2">
+                            <input type="text" name="id" id="id" placeholder="id" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <h2>Contact Details</h2>
+                    <div class="form-row">
+                        <input type="text" name="street" class="street" id="street" placeholder="Street + Nr" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="phone1" class="phone" id="phone" placeholder="Phone Number 1" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="phone2" class="phone" id="phone" placeholder="Phone Number 2">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="your_email" id="your_email" class="input-text" placeholder="Patient's Email">
+                    </div>
+
+                    <div class="Emergency">
+                        <h2 id="emergency_contact">Emergency contact</h2>
+                        <div class="form-row">
+                            <input type="text" name="emergency_contact_name" id="emergency_contact_name" class="input-text" required placeholder="Emergency contact name">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="emergency_contact_relation" id="emergency_contact_relation" class="input-text" required placeholder="Emergency contact relation">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="emergency_contact_address" id="emergency_contact_address" class="input-text" placeholder="Emergency contact address">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="emergency_contact_phone" class="phone" id="emergency_contact_phone" placeholder="Emergency contact phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row-last">
+                        <input type="submit" name="register" class="register" value="Register Patient">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+          <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer" lang="en">
+        <div class="footer-primary">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="footer-widget-about">
+                  <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                  <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                    compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                    choice for your family healthcare.
+                  </p>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-xl-2 -->
+  
+              <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="footer-widget-nav">
+                  <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                  <nav>
+                    <ul style="color:#20044f !important" class="list-unstyled">
+                      <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                      <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                      <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+              <div class="col-sm-12 col-md-5 col-lg-6">
+                <div class="footer-widget-contact">
+                  <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li>If you have any questions or need help, feel free to contact with our team.</li>
+                    <li>
+                      <a href="tel:01061245741" class="phone__number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.footer-primary -->
+      </footer><!-- /.Footer -->
+      <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+</body>
+</html>

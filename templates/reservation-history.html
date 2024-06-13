@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+        <meta name="description" content="MediCarePlus - Medical Healthcare HTML5 Template">
+        <link href="/static/images/favicon/favicon.ico" rel="icon">
+        <title>MediCarePlus - Medical Healthcare</title>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+        <link rel="stylesheet" href="/static/use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="/static/css/libraries.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/printreport.css">
+
+      </head>
+<body>
+        <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+
+<nav class="navbar navbar-expand-lg sticky-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <!-- <img src="/static/images/logo/logo-light.png" class="logo-light" alt="logo"> -->
+        <img src="/static/images/logo/logo1.png" class="logo-dark" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="menu-lines"><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ml-auto">
+                <li style="color: #20054e;font-size: 27pt;">Hello, Admin Mohammed!</li>
+
+                <!--<li style="color: #20054e;font-size: 27pt;">Hello, Hospital Receptionist Jane!</li>-->
+            
+          {#<li style="margin-top: 8px;">  
+            <a href="/" class="btn_login" style="color: #fff !important;"><i class="icon-user"></i><span style="margin-left: 10px;">Logout</span></a>
+          </li> 
+          <li class="nav__item">
+            <a href="staff-main.html" class="nav__item-link">User home</a>
+          </li><!-- /.nav-item -->#}
+        </ul>
+        <a href="index.html" class="btn_login" style="color: #fff !important;margin-right: -35px;"><span style="margin-left: 10px;">Logout</span></a>
+        <a href="staff-main.html" class="btn_login" style="color: #fff !important;"><span style="margin-left: 10px; width:80px;">User home</span></a>
+      </div>
+    </div>
+  </nav><!-- /.navabr -->
+      </header><!-- /.Header -->
+
+      <!-- Page Content #############-->
+<!--  table tablestriped-->
+<br><br><br><br>
+<table class=" ">
+    <thead class="thead-dark">{# id="theadmain" #}
+        <tr>
+            <th class="text-start head">Rooms No.</th>
+            <th class="text-start head">pateint First Name</th>
+            <th class="text-end head">Pateint Middle Name</th>
+            <th class="text-start head">Pateint Last Name</th>
+            <th class="text-end head">Check In Date</th>
+            <th class="text-start head">Check Out Date</th>
+            <th class="text-start head">Exit Date</th>
+            <th class="text-end head">Total Price</th>
+            <th class="text-start head">Payment Method</th>
+            <th class="text-start head">Registration Time</th>
+            <th class="text-end head">Reservation Status</th>
+            <th class="text-start head">User Name</th>
+            <th class="text-start head">User Role</th>              
+        </tr>
+    </thead>
+    <tbody>
+<!-- Loop through the database entries to display them in this table -->
+        {% for reservation_data in reservation_data %}
+            <tr>
+                <td class="text-start data">{{ reservation_data["room_number"] }}</td>
+                <td class="text-end data">{{ reservation_data["pateint_first_name"] }}</td>
+                <td class="text-start data">{{ reservation_data["pateint_middle_name"] }}</td>
+                <td class="text-start data">{{ reservation_data["pateint_last_name"] }}</td>
+                <td class="text-end data">{{ reservation_data["checkin"] }}</td>
+                <td class="text-start data">{{ reservation_data["checkout"] }}</td>
+                <td class="text-start data">{{ reservation_data["exit_date"] }}</td>
+                <td class="text-end data">{{ reservation_data["price"] }}</td>
+                <td class="text-start data">{{ reservation_data["payment"] }}</td>
+                <td class="text-start data">{{ reservation_data["registration_time"] }}</td>
+                <td class="text-end data">{{ reservation_data["reservation_status"] }}</td>
+                <td class="text-start data">{{ reservation_data["user_first_name"] }}</td>
+                <td class="text-start data">{{ reservation_data["user_role"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table><br><br><br><br> 
+
+          <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer" lang="en">
+        <div class="footer-primary">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="footer-widget-about">
+                  <img src="/static/images/logo/logo1.png" alt="logo" class="mb-30">
+                  <p class="color-secondary">Our goal is to deliver quality of care in a courteous, respectful, and
+                    compassionate manner. We hope you will allow us to care for you and strive to be the first and best
+                    choice for your family healthcare.
+                  </p>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-xl-2 -->
+  
+              <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="footer-widget-nav">
+                  <h6 class="footer-widget__title" style="color:#20044f !important">Links</h6>
+                  <nav>
+                    <ul style="color:#20044f !important" class="list-unstyled">
+                      <li><a href="about-us.html" style="color:#20044f !important">About Us</a></li>
+                      <li><a href="/blog" style="color:#20044f !important">Blog</a></li>
+                      <li><a href="/contactus" style="color:#20044f !important">Contact us</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+              <div class="col-sm-12 col-md-5 col-lg-6">
+                <div class="footer-widget-contact">
+                  <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li>If you have any questions or need help, feel free to contact with our team.</li>
+                    <li>
+                      <a href="tel:01061245741" class="phone__number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+  
+                </div><!-- /.footer-widget__content -->
+              </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.footer-primary -->
+      </footer><!-- /.Footer -->
+      <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+</body>
+</html>
